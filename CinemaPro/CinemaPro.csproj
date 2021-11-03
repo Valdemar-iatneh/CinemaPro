@@ -68,6 +68,7 @@
     <Compile Include="AgeCategory_ID.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
+    <Compile Include="CinemaCore.cs" />
     <Compile Include="cinema_pro_database.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,11 +84,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cinema_pro_database.edmx</DependentUpon>
     </Compile>
+    <Compile Include="cinema_pro_database_conection.cs" />
     <Compile Include="Film.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmCompany.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilmInSession.cs" />
+    <Compile Include="films_panel.xaml.cs">
+      <DependentUpon>films_panel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="film_page.xaml.cs">
+      <DependentUpon>film_page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
@@ -100,6 +109,9 @@
     </Compile>
     <Compile Include="Session.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="session_page.xaml.cs">
+      <DependentUpon>session_page.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
@@ -114,6 +126,14 @@
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
     <Page Include="admin_space.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="films_panel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="film_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +172,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="page_authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="session_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +242,27 @@
       <DependentUpon>cinema_pro_database.edmx</DependentUpon>
       <LastGenOutput>cinema_pro_database.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\image1.jpg" />
+    <Resource Include="images\image2.jpg" />
+    <Resource Include="images\image3.jpg" />
+    <Resource Include="images\image4.jpg" />
+    <Resource Include="images\image5.jpg" />
+    <Resource Include="images\image6.jpg" />
+    <Resource Include="images\image10.jpg" />
+    <Resource Include="images\image11.jpg" />
+    <Resource Include="images\image12.jpg" />
+    <Resource Include="images\image13.jpg" />
+    <Resource Include="images\image14.jpg" />
+    <Resource Include="images\image15.jpg" />
+    <Resource Include="images\image16.jpg" />
+    <Resource Include="images\image17.jpg" />
+    <Resource Include="images\image18.jpg" />
+    <Resource Include="images\image19.jpg" />
+    <Resource Include="images\image20.jpg" />
+    <Resource Include="images\image21.jpg" />
+    <Resource Include="images\image7.jpg" />
+    <Resource Include="images\image8.jpg" />
+    <Resource Include="images\image9.jpg" />
     <Content Include="login_database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>login_database.edmx</DependentUpon>
@@ -228,6 +273,10 @@
       <DependentUpon>login_database.edmx</DependentUpon>
       <LastGenOutput>login_database.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MainWindowPackage\" />
+    <Folder Include="UserWindowPackage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

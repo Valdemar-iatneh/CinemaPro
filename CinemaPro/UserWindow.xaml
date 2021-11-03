@@ -5,18 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaPro"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="UserWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="list_view">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="Открыть католог фильмов"/>
-                        <TextBlock Text="Заглушка1"/>
-                        <TextBlock Text="Заглушка2"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="#FFF9F9F9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button Content="Back"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="Green" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Frame Width="1000" Height="650" Margin="10" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="films" NavigationUIVisibility="Hidden" />
+        </StackPanel>
     </Grid>
 </Window>

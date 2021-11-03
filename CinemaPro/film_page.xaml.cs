@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CinemaPro
 {
     /// <summary>
-    /// Interaction logic for UserWindow.xaml
+    /// Interaction logic for film_page.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class film_page : Page
     {
-        public UserWindow()
+        public film_page()
         {
             InitializeComponent();
-            films.NavigationService.Navigate(new session_page());
         }
     }
 }

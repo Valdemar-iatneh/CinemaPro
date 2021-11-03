@@ -43,5 +43,4 @@
             <Button Content="Log in" Padding="10" Margin="10" Click="authoriz_click_event"/>
         </StackPanel>
     </Grid>
- 
 </Page>

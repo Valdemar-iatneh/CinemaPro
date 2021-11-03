@@ -1,0 +1,29 @@
+﻿<Page x:Class="CinemaPro.films_panel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaPro"
+      mc:Ignorable="d" 
+      d:DesignHeight="100" d:DesignWidth="400"
+      Title="films_panel">
+
+    <Grid>
+        <ListView x:Name="list_of_films" ItemsSource="{Binding films}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Height="400" Margin="1 0 " Source="{Binding Image}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Duration}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

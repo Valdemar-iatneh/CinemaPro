@@ -11,19 +11,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CinemaPro
 {
     /// <summary>
-    /// Interaction logic for UserWindow.xaml
+    /// Interaction logic for films_panel.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class films_panel : Page
     {
-        public UserWindow()
+        public static ObservableCollection<Film> films { get; set; }
+        public films_panel()
         {
             InitializeComponent();
-            films.NavigationService.Navigate(new session_page());
+            films = new ObservableCollection<Film>(cinema_pro_database_conection.connection.Film.ToList());
+            this.DataContext = this;
         }
     }
 }

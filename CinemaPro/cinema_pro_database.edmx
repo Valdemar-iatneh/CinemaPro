@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CinemaProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CinemaProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AgeCategory_ID">
           <Key>
             <PropertyRef Name="AgeCategory_ID" />
@@ -23,6 +23,7 @@
           <Property Name="AgeCategory_ID" Type="int" />
           <Property Name="FilmCompany_ID" Type="int" />
           <Property Name="Country_ID" Type="int" />
+          <Property Name="Image" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FilmCompany">
           <Key>
@@ -269,8 +270,7 @@
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CinemaProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -298,6 +298,7 @@
           <NavigationProperty Name="Сountry" Relationship="Self.FK_Film_Сountry" FromRole="Film" ToRole="Сountry" />
           <NavigationProperty Name="Session" Relationship="Self.FK_Session_Film" FromRole="Film" ToRole="Session" />
           <NavigationProperty Name="Genre" Relationship="Self.FilmGenre" FromRole="Film" ToRole="Genre" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FilmCompany">
           <Key>
@@ -540,6 +541,7 @@
           <EntitySetMapping Name="Film">
             <EntityTypeMapping TypeName="CinemaProModel.Film">
               <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Film_ID" ColumnName="Film_ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Year_of_issue" ColumnName="Year_of_issue" />

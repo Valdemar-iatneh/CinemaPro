@@ -25,8 +25,7 @@ namespace CinemaPro
        
         public page_authorization()
         {
-            InitializeComponent();
-               
+            InitializeComponent();               
         }
 
         private void authoriz_click_event(object sender, RoutedEventArgs e)

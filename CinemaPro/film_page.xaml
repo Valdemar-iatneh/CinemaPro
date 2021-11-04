@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="film_page">
 
-    <Grid>
+    <Grid DataContext="{Binding film_ID_in_session}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -22,8 +22,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="{Binding Image}"/>
-        <TextBlock Text="{Binding Name}"/>
-        <TextBlock/>
-        <Button/>
+        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="testo" Text="{Binding FilmCompany_ID}"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" x:Name="test1"/>
     </Grid>
 </Page>

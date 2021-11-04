@@ -26,7 +26,9 @@ namespace CinemaPro
         {
             InitializeComponent();
             films = new ObservableCollection<Film>(cinema_pro_database_conection.connection.Film.ToList());
+            
             this.DataContext = this;
+            
         }
     }
 }

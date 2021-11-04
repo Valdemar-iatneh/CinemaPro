@@ -9,7 +9,7 @@
       Title="session_page">
 
     <Grid>
-        <ListView x:Name="list_of_films" Margin="0 50 0 0" ItemsSource="{Binding session}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView x:Name="list_of_films" Margin="0 50 0 0" ItemsSource="{Binding ex}" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="film_S">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -17,9 +17,11 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <!-- <Image Height="400" Margin="16 0 " Source="{Binding Image}"/> -->
-                        <TextBlock Text="{Binding Film_ID}"/>
+                    <StackPanel x:Name="sel">
+                        <Image Height="400" Margin="16 0 " Source="{Binding Image}"/>
+                        <TextBlock x:Name="film_" Text="{Binding Film_ID}"/>
+                        <TextBlock x:Name="film_1" Text="{Binding Name}"/>
+                        <!--<TextBlock x:Name="test"/> -->
                         <TextBlock Text="{Binding Hall_ID}"/>
                         <TextBlock Text="{Binding DateTime}"/>
                     </StackPanel>

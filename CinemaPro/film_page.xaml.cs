@@ -24,14 +24,18 @@ namespace CinemaPro
     {
        // public int film_ID_in_session;
         public static ObservableCollection<Film> film { get; set; }
+        public static FilmInSession filmSessions { get; set; }
 
-        public film_page(Film film_ID_in_session)
+        public film_page(FilmInSession tot)
         {
             InitializeComponent();
             
             film = new ObservableCollection<Film>(cinema_pro_database_conection.connection.Film.ToList());
+            filmSessions = tot;
+            
+            //test1.Text = film_ID_in_session.ToString();
             //foreach (var e in film_ID_in_session)
-            MessageBox.Show($"{film_ID_in_session}");
+            //MessageBox.Show($"{film_ID_in_session}");
             //filmInSes1 = new ObservableCollection<FilmInSession>(film_ID_in_session);
             //filmInSes = new ObservableCollection<Film>(film.Where(f => f.Film_ID == film_ID_in_session).ToList());
             //List<Film> s = new Li st<Film>();

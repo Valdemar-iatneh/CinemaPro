@@ -42,11 +42,11 @@ namespace CinemaPro
                     DateTime = ses.DateTime,
                     Hall_ID = (int)ses.Hall_ID,
                     Name = film.Name,
-                    Year_of_issue = film.Year_of_issue,
-                    Duration = film.Duration,
-                    AgeCategory_ID = film.AgeCategory_ID,
-                    FilmCompany_ID = film.FilmCompany_ID,
-                    Country_ID = film.Country_ID,
+                    Year_of_issue = (int)film.Year_of_issue,
+                    Duration = (int)film.Duration,
+                    AgeCategory_ID = (int)film.AgeCategory_ID,
+                    FilmCompany_ID = (int)film.FilmCompany_ID,
+                    Country_ID = (int)film.Country_ID,
                     Image = film.Image
                 });
 

@@ -23,11 +23,11 @@ namespace CinemaPro
     
         public int Film_ID { get; set; }
         public string Name { get; set; }
-        public int Year_of_issue { get; set; }
-        public int Duration { get; set; }
-        public int AgeCategory_ID { get; set; }
-        public int FilmCompany_ID { get; set; }
-        public int Country_ID { get; set; }
+        public Nullable<int> Year_of_issue { get; set; }
+        public Nullable<int> Duration { get; set; }
+        public Nullable<int> AgeCategory_ID { get; set; }
+        public Nullable<int> FilmCompany_ID { get; set; }
+        public Nullable<int> Country_ID { get; set; }
         public string Image { get; set; }
     
         public virtual AgeCategory_ID AgeCategory_ID1 { get; set; }

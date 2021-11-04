@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="add_new_session_page.xaml.cs">
+      <DependentUpon>add_new_session_page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AgeCategory_ID.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
@@ -85,6 +88,21 @@
       <DependentUpon>cinema_pro_database.edmx</DependentUpon>
     </Compile>
     <Compile Include="cinema_pro_database_conection.cs" />
+    <Compile Include="cinema_pro_new_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cinema_pro_new_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cinema_pro_new_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cinema_pro_new_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cinema_pro_new_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cinema_pro_new_db.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Film.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
@@ -107,11 +125,17 @@
     <Compile Include="Hall.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
+    <Compile Include="ManagerWindow.xaml.cs">
+      <DependentUpon>ManagerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Place.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
     <Compile Include="Session.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="session_edit.xaml.cs">
+      <DependentUpon>session_edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="session_page.xaml.cs">
       <DependentUpon>session_page.xaml</DependentUpon>
@@ -128,6 +152,10 @@
     <Compile Include="Сountry.cs">
       <DependentUpon>cinema_pro_database.tt</DependentUpon>
     </Compile>
+    <Page Include="add_new_session_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin_space.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,7 +206,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="page_authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="session_edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,6 +258,13 @@
     </EntityDeploy>
     <None Include="cinema_pro_database.edmx.diagram">
       <DependentUpon>cinema_pro_database.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="cinema_pro_new_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>cinema_pro_new_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="cinema_pro_new_db.edmx.diagram">
+      <DependentUpon>cinema_pro_new_db.edmx</DependentUpon>
     </None>
     <None Include="login_database.edmx.diagram">
       <DependentUpon>login_database.edmx</DependentUpon>
@@ -270,6 +313,16 @@
     <Resource Include="images\image7.jpg" />
     <Resource Include="images\image8.jpg" />
     <Resource Include="images\image9.jpg" />
+    <Content Include="cinema_pro_new_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cinema_pro_new_db.edmx</DependentUpon>
+      <LastGenOutput>cinema_pro_new_db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="cinema_pro_new_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cinema_pro_new_db.edmx</DependentUpon>
+      <LastGenOutput>cinema_pro_new_db.cs</LastGenOutput>
+    </Content>
     <Content Include="login_database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>login_database.edmx</DependentUpon>

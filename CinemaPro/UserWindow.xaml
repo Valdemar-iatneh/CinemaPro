@@ -25,7 +25,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <Button Content="Back"/>
+            <Button Click="mainMenu_click_event" Content="Главное меню"/>
+            <Button Click="allFilms_click_event" Content="Все фильмы"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel.Background>

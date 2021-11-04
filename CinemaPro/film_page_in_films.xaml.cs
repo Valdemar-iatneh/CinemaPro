@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,21 +17,18 @@ using System.Windows.Shapes;
 namespace CinemaPro
 {
     /// <summary>
-    /// Interaction logic for film_page.xaml
+    /// Interaction logic for film_page_in_films.xaml
     /// </summary>
-    public partial class film_page : Page
+    public partial class film_page_in_films : Page
     {
         public static ObservableCollection<Film> film { get; set; }
-        public static FilmInSession filmSessions { get; set; }
-
-        public film_page(FilmInSession selectedFilmInSession)
+        public static ObservableCollection<Film> filmInSes { get; set; }
+        public film_page_in_films(int selectedFilmInSession_FilmID)
         {
             InitializeComponent();
-            
             film = new ObservableCollection<Film>(cinema_pro_database_conection.connection.Film.ToList());
-            //Передача данных из предыдущей страницы в текущую
-            filmSessions = selectedFilmInSession;           
-            
+            //Выборка среди фильмов где Film_Id соответствует выбранному фильму
+            filmInSes = new ObservableCollection<Film>(film.Where(f => f.Film_ID == selectedFilmInSession_FilmID).ToList());
             this.DataContext = this;
         }
     }

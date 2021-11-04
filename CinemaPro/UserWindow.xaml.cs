@@ -23,7 +23,19 @@ namespace CinemaPro
         public UserWindow()
         {
             InitializeComponent();
+            //Переход к сеансам фильмов
             films.NavigationService.Navigate(new session_page());
         }
+
+        //Переход в Главное меню
+        private void mainMenu_click_event(object sender, RoutedEventArgs e)
+        {
+            films.NavigationService.Navigate(new session_page());
+        }
+        //Переход к всем фильмам
+        private void allFilms_click_event(object sender, RoutedEventArgs e)
+        {           
+            films.NavigationService.Navigate(new films_panel());
+        }        
     }
 }

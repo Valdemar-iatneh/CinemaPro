@@ -9,7 +9,7 @@
       Title="films_panel">
 
     <Grid>
-        <ListView x:Name="list_of_films" ItemsSource="{Binding films}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView x:Name="list_of_films" Margin="0 50 0 0" ItemsSource="{Binding films}" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -18,12 +18,11 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Image Height="400" Margin="10 " Source="{Binding Image}"/>
-                        <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding Duration}"/>
+                        <Image Height="400" Margin="16 0" Source="{Binding Image}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Click="film_select_event" Margin="0 0 0 550" Width="1000" Height="50" Content="Выбрать фильм"/>
     </Grid>
 </Page>

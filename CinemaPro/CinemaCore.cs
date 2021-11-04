@@ -9,8 +9,6 @@ namespace CinemaPro
 {
     class CinemaCore
     {
-        public static ObservableCollection<Session> session { get; set; }
-        public static ObservableCollection<Film> film { get; set; }
-        public static ObservableCollection<Hall> hall { get; set; }
+        //*звуки сверчков
     }
 }

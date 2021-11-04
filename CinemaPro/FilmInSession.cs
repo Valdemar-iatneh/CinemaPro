@@ -8,7 +8,7 @@ namespace CinemaPro
 {
     public partial class FilmInSession
     {
-
+        //Новый тип для join
         public System.DateTime DateTime { get; set; }
         public int Hall_ID { get; set; }
         public string Name { get; set; }

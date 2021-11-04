@@ -32,6 +32,7 @@ namespace CinemaPro
 
         private void add_new_session_click(object sender, RoutedEventArgs e)
         {
+            //Добавление нового сеанса ... какая-то приведения
             newSession.DateTime = DateTime.Parse(dateTimeText.Text);
             newSession.Film_ID = Convert.ToInt32(filmIDText.Text);
             newSession.Hall_ID = Convert.ToInt32(hallIDText.Text);
@@ -42,6 +43,7 @@ namespace CinemaPro
 
         private void return_click(object sender, RoutedEventArgs e)
         {
+            //Переход в предыдущую страницу
             NavigationService.Navigate(new session_edit());
         }
     }

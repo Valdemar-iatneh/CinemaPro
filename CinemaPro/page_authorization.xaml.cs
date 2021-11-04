@@ -33,51 +33,70 @@ namespace CinemaPro
             users = new ObservableCollection<login_data>(login_database_conection.connection.login_data.ToList());
             try
             {
+                //Проверка на корректность логина и пароля
                 var entry = users.Where(a => a.login == text_login.Text && a.password == text_password.Password && a.access_level == access_level.SelectedItem.ToString()).FirstOrDefault();
                 switch (access_level.SelectedItem)
                 {
+                    //Если User
                     case "User":
                         if (entry != null)
                         {
-                            MessageBox.Show($"{entry.name} {entry.access_level}");
+                            //Приветствие Пользователя
+                            MessageBox.Show($"Welcome {entry.name} ({entry.access_level})");
+                            //Инициализация окон
                             UserWindow userWindow = new UserWindow();
                             MainWindow mainWindow = new MainWindow();
-                            mainWindow.Close();
                             userWindow.Show();
-                            
+                            mainWindow.Hide();
+
                         }
                         else
                         {
+                            //Ошибка - "Не корректные логин или пароль"
                             MessageBox.Show("Login or password incorrect", "error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         break;
+                    //Если Manager
                     case "Manager":
                         if (entry != null)
                         {
-                            MessageBox.Show($"{entry.name} {entry.access_level}");
+                            //Приветствие Менеджера
+                            MessageBox.Show($"Welcome {entry.name} ({entry.access_level})");
+                            //Инициализация окон
+                            ManagerWindow managerWindow = new ManagerWindow();
+                            MainWindow mainWindow = new MainWindow();
+                            managerWindow.Show();
+                            mainWindow.Hide();
                         }
                         else
                         {
+                            //Ошибка - "Не корректные логин или пароль"
                             MessageBox.Show("Login or password incorrect", "error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         break;
+                    //Если Admin
                     case "Admin":
                         if (entry != null)
                         {
+                            //Админа можно не приветствовать
+                            //Переход в пространство админа
                             NavigationService.Navigate(new admin_space());
                         }
                         else
                         {
+                            //Ошибка - "Не корректные логин или пароль"
                             MessageBox.Show("Login or password incorrect", "error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         break;
                     default:
+                        //Ошибка - "Не выбрано"
                         MessageBox.Show($"Не выбрано");
                         break;
                 }
             }
             catch
             {
+                //Ошибка - "Не выбрано"
                 MessageBox.Show($"Не выбрано");
             }
         }

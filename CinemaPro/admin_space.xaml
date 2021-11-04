@@ -10,13 +10,13 @@
 
     <Grid>
         <ScrollViewer>
-            <ListView x:Name="list_view" ItemsSource="{Binding users}">
+            <ListView x:Name="list_view" ItemsSource="{Binding users}" SelectionChanged="selected_item">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding access_level}"/>
+                            <TextBlock Text="{Binding name}"/>
                             <TextBlock Text="{Binding login}"/>
-                            <TextBlock Text="{Binding password}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

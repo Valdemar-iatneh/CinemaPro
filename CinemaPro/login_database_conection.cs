@@ -8,6 +8,7 @@ namespace CinemaPro
 {
     class login_database_conection
     {
+        //Connection
         public static LoginEntities1 connection = new LoginEntities1();
     }
 }

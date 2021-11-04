@@ -22,6 +22,7 @@ namespace CinemaPro
         public ManagerWindow()
         {
             InitializeComponent();
+            //Переход к изменению сеансов
             films.NavigationService.Navigate(new session_edit());
         }
     }

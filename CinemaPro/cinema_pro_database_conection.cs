@@ -8,6 +8,7 @@ namespace CinemaPro
 {
     class cinema_pro_database_conection
     {
+        //Connection
         public static CinemaProEntities connection = new CinemaProEntities();
     }
 }

@@ -30,7 +30,7 @@
                     <GradientStop Color="BlueViolet" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Frame x:Name="autorization" NavigationUIVisibility="Hidden"/>
+            <Frame Margin="5" Width="650" Height="370" x:Name="autorization" NavigationUIVisibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Window>

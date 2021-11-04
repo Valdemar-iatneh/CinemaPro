@@ -34,18 +34,20 @@ namespace CinemaPro
         private void selected_session(object sender, SelectionChangedEventArgs e)
         {
             var info = (sender as ListView).SelectedItem as Session;
-            var infoe = (sender as ListView).SelectedItem as Ticket;
+            //Удаление
             if (MessageBox.Show($"Удалить сеанс на {info.DateTime}", "Удалить?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
+                //Удаление
                 cinema_pro_database_conection.connection.Session.Remove(info);
-                //cinema_pro_database_conection.connection.Ticket.Remove(infoe);
                 cinema_pro_database_conection.connection.SaveChanges();
+                //Обновление listView 
                 list_of_films.Items.Refresh();
             }
         }
 
         private void add_new_session_click(object sender, RoutedEventArgs e)
         {
+            //переход к созданию нового элемента
             NavigationService.Navigate(new add_new_session_page());
         }
     }

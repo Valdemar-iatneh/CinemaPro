@@ -23,6 +23,7 @@ namespace CinemaPro
         public MainWindow()
         {
             InitializeComponent();
+            //Переход в окно авторизации
             autorization.NavigationService.Navigate(new page_authorization());
         }
     }

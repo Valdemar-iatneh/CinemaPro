@@ -34,5 +34,19 @@ namespace CinemaPro
         {
             NavigationService.Navigate(new page_authorization());
         }
+
+        private void selected_item(object sender, SelectionChangedEventArgs e)
+        {
+            var info = (sender as ListView).SelectedItem as login_data;
+            //Удаление
+            if (MessageBox.Show($"Удалить учетную запись {info.name}", "Удалить?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                //Удаление
+                login_database_conection.connection.login_data.Remove(info);
+                login_database_conection.connection.SaveChanges();
+                //Обновление listView 
+                list_view.Items.Refresh();
+            }
+        }
     }
 }
